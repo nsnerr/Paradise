@@ -10,9 +10,9 @@
 	throwforce = 15
 	item_state = "broken_beer" //Generic held-item sprite until unique ones are made.
 	var/const/duration = 13 //Directly relates to the 'weaken' duration. Lowered by armor (i.e. helmets)
-	var/isGlass = 1 //Whether the 'bottle' is made of glass or not so that milk cartons dont shatter when someone gets hit by it
+	var/isGlass = TRUE //Whether the 'bottle' is made of glass or not so that milk cartons dont shatter when someone gets hit by it
 
-/obj/item/reagent_containers/food/drinks/bottle/proc/smash(mob/living/target, mob/living/user, ranged = 0)
+/obj/item/reagent_containers/food/drinks/bottle/proc/smash(mob/living/target, mob/living/user, ranged = FALSE)
 
 	//Creates a shattering noise and replaces the bottle with a broken_bottle
 	var/new_location = get_turf(loc)
@@ -330,7 +330,7 @@
 	icon_state = "orangejuice"
 	item_state = "carton"
 	throwforce = 0
-	isGlass = 0
+	isGlass = FALSE
 	list_reagents = list("orangejuice" = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/cream
@@ -339,7 +339,7 @@
 	icon_state = "cream"
 	item_state = "carton"
 	throwforce = 0
-	isGlass = 0
+	isGlass = FALSE
 	list_reagents = list("cream" = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/tomatojuice
@@ -348,7 +348,7 @@
 	icon_state = "tomatojuice"
 	item_state = "carton"
 	throwforce = 0
-	isGlass = 0
+	isGlass = FALSE
 	list_reagents = list("tomatojuice" = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/limejuice
@@ -357,7 +357,7 @@
 	icon_state = "limejuice"
 	item_state = "carton"
 	throwforce = 0
-	isGlass = 0
+	isGlass = FALSE
 	list_reagents = list("limejuice" = 100)
 
 /obj/item/reagent_containers/food/drinks/bottle/milk
@@ -366,7 +366,7 @@
 	icon_state = "milk"
 	item_state = "carton"
 	throwforce = 0
-	isGlass = 0
+	isGlass = FALSE
 	list_reagents = list("milk" = 100)
 
 ////////////////////////// MOLOTOV ///////////////////////
@@ -378,6 +378,8 @@
 	var/list/accelerants = list(/datum/reagent/consumable/ethanol,/datum/reagent/fuel,/datum/reagent/clf3,/datum/reagent/phlogiston,
 							/datum/reagent/napalm,/datum/reagent/hellwater,/datum/reagent/plasma,/datum/reagent/plasma_dust)
 	var/active = 0
+	var/splashes_part = 0.6
+	var/central_part = 0.4
 
 /obj/item/reagent_containers/food/drinks/bottle/molotov/CheckParts(list/parts_list)
 	..()
@@ -387,7 +389,73 @@
 		B.reagents.copy_to(src, 100)
 		if(!B.isGlass)
 			desc += " You're not sure if making this out of a carton was the brightest idea."
-			isGlass = 0
+			isGlass = FALSE
+
+/obj/item/reagent_containers/food/drinks/bottle/molotov/proc/SplashReagentsAround(atom/A, burning=FALSE)
+	if(!reagents || reagents.total_volume == 0)
+		return
+
+	var/turf/c_turf = get_turf(A)
+	var/list/atom/targets[5]
+	targets[1] = A
+
+	for (var/i = 1; i < 5; i++) // get availabled adjacent turfs N,S,E,W, Check with central turf
+		var/turf/T = get_step(A, GLOB.cardinal[i])
+		if (T && c_turf.CanPass(null, T, 0) && T.CanPass(null, c_turf, 0))
+			targets[i+1] += T
+
+	var/turf/dc1
+	var/turf/dc2
+	for (var/d in GLOB.diagonals) // get availabled adjacent turfs NE,NW,SE,SW. Checking both adjacent turfs
+		var/turf/T = get_step(A, d)
+		if (!T) continue
+
+		if (d & NORTH && targets[2])
+			dc1 = targets[2]
+		else if (d & SOUTH && targets[3])
+			dc1 = targets[3]
+		else
+			continue
+
+		if (d & EAST && targets[4])
+			dc2 = targets[4]
+		else if (d & WEST && targets[5])
+			dc2 = targets[5]
+		else
+			continue
+
+		if (dc1.CanPass(null, T, 0) && T.CanPass(null, dc1, 0) && dc2.CanPass(null, T, 0) && T.CanPass(null, dc2, 0))
+			var/mob/living/M = locate() in T
+			if (M)
+				targets += M
+			else
+				targets += T
+
+	var/central_vol_mod = central_part
+	var/splash_vol_mod = 0
+	if (targets.len < 2)
+		central_vol_mod = 1
+	else
+		splash_vol_mod = splashes_part / (targets.len - 1)
+
+	for (var/i = 1; i <= targets.len; i++)
+		var/atom/target = targets[i]
+		if (!target) continue
+
+		var/vm = i == 1 ? central_vol_mod : splash_vol_mod
+		reagents.reaction(target, REAGENT_TOUCH, vm)
+		reagents.clear_reagents()
+
+		var/mob/living/M = target
+		if (istype(M))
+			M.visible_message("<span class='danger'>The contents of \the [src] splashes all over [M]!</span>")
+			if (burning)
+				M.fire_act(fire_stacks = 2)
+				new /obj/effect/hotspot(get_turf(M))
+		else if (burning)
+			target.fire_act()
+			new /obj/effect/hotspot(get_turf(target))
+
 
 /obj/item/reagent_containers/food/drinks/bottle/molotov/throw_impact(atom/target, datum/thrownthing/throwingdatum)
 	var/firestarter = 0
@@ -396,10 +464,10 @@
 			if(istype(R, A))
 				firestarter = 1
 				break
-	SplashReagents(target)
-	if(firestarter && active)
-		target.fire_act()
-		new /obj/effect/hotspot(get_turf(target))
+
+	SplashReagentsAround(target, firestarter && active)
+	smash(target, ranged = TRUE)
+
 	..()
 
 /obj/item/reagent_containers/food/drinks/bottle/molotov/attackby(obj/item/I, mob/user, params)
@@ -412,7 +480,7 @@
 		to_chat(user, "<span class='info'>You light [src] on fire.</span>")
 		overlays += GLOB.fire_overlay
 		if(!isGlass)
-			spawn(50)
+			spawn(5 SECONDS)
 				if(active)
 					var/counter
 					var/target = loc
@@ -434,3 +502,10 @@
 		to_chat(user, "<span class='info'>You snuff out the flame on \the [src].</span>")
 		overlays -= GLOB.fire_overlay
 		active = 0
+
+/obj/item/reagent_containers/food/drinks/bottle/molotov/can_enter_storage(obj/item/storage/S, mob/user)
+	if (active)
+		to_chat(user, "<span class='warning'>[S] can't hold [src] while it's lit!</span>")
+		return FALSE
+	else
+		return TRUE

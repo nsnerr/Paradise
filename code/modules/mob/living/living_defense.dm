@@ -224,9 +224,9 @@
 	SEND_SIGNAL(src, COMSIG_LIVING_FIRE_TICK)
 	return TRUE
 
-/mob/living/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume, global_overlay = TRUE)
+/mob/living/fire_act(datum/gas_mixture/air, exposed_temperature, exposed_volume, global_overlay = TRUE, fire_stacks = 3)
 	..()
-	adjust_fire_stacks(3)
+	adjust_fire_stacks(fire_stacks)
 	IgniteMob()
 
 //Share fire evenly between the two mobs
