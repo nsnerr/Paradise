@@ -12,19 +12,25 @@
 	gender = MALE
 	icon_state = "bow"
 	item_state = "bow"
-	fire_sound = 'sound/weapons/grenadelaunch.ogg'
+
+	fire_sound = 'sound/weapons/bows/bow_fire.ogg'
+	pickup_sound = 'sound/weapons/bows/bow_pickup.ogg'
+	drop_sound = 'sound/weapons/bows/bow_drop.ogg'
+	equip_sound = 'sound/weapons/bows/bow_equip.ogg'
+
 	mag_type = /obj/item/ammo_box/magazine/internal/bow
 	item_flags = SLOWS_WHILE_IN_HAND
 	slot_flags = ITEM_SLOT_BACK
 	weapon_weight = WEAPON_HEAVY
 	trigger_guard = TRIGGER_GUARD_NONE
-	var/draw_sound = 'sound/weapons/draw_bow.ogg'
+
+	var/draw_sound = 'sound/weapons/bows/bow_pull.ogg'
 	var/ready_to_fire = FALSE
 	var/slowdown_when_ready = 2
 
 /obj/item/gun/projectile/bow/ashen //better than wooden
 	name = "bone bow"
-	desc = "Примитивный лук с тетивой, сделанной из жилы. Обычно используется племенными охотниками и воинами. Из-за специфической конструкции лука из него можно стрелять только костяными стрелами."
+	desc = "Примитивный лук с тетивой, сделанной из жилы. Обычно используется племенными охотниками и воинами."
 	ru_names = list(
 		NOMINATIVE = "костяной лук",
 		GENITIVE = "костяного лука",
@@ -35,11 +41,15 @@
 	)
 	icon_state = "ashenbow"
 	item_state = "ashenbow"
-	mag_type = /obj/item/ammo_box/magazine/internal/bow/ashen //you can't shoot wooden arrows from bone bow!
+
+	fire_sound = 'sound/weapons/bows/bonebow_fire.ogg'
+	drop_sound = 'sound/weapons/bows/bonebow_drop.ogg'
+	draw_sound = 'sound/weapons/bows/bonebow_pull.ogg'
+
+	item_flags = NONE
 	flags = NONE
 	force = 10
 	slowdown_when_ready = 1
-
 
 /obj/item/gun/projectile/bow/proc/update_state()
 	update_slowdown()
@@ -115,11 +125,22 @@
 	caliber = "arrow"
 	max_ammo = 1
 	start_empty = TRUE
-
-/obj/item/ammo_box/magazine/internal/bow/ashen
-	name = "ashen bow internal magazine"
-	ammo_type = /obj/item/ammo_casing/caseless/arrow/bone_tipped
-	caliber = "bone_arrow"
+	replacing_sound = list(
+		'sound/weapons/bows/arrow_insert1.ogg',
+		'sound/weapons/bows/arrow_insert2.ogg'
+	)
+	remove_sound = list(
+		'sound/weapons/bows/arrow_remove1.ogg',
+		'sound/weapons/bows/arrow_remove2.ogg'
+	)
+	insert_sound = list(
+		'sound/weapons/bows/arrow_insert1.ogg',
+		'sound/weapons/bows/arrow_insert2.ogg'
+	)
+	load_sound = list(
+		'sound/weapons/bows/arrow_remove1.ogg',
+		'sound/weapons/bows/arrow_remove2.ogg'
+	) //all these sounds are too good to be true
 
 /obj/item/projectile/bullet/reusable/arrow //only for wooden bow!
 	name = "arrow"
@@ -154,6 +175,15 @@
 	damage = 45
 	armour_penetration = -10
 	faction_bonus_damage = 23
+
+/obj/item/projectile/bullet/reusable/arrow/jagged //alternative arrow, made from fishing
+	name = "jagged-tipped arrow"
+	icon_state = "jagged_arrow"
+	ammo_type = /obj/item/ammo_casing/caseless/arrow/jagged
+	range = 12
+	damage = 60
+	armour_penetration = -10
+	faction_bonus_damage = 27
 
 /obj/item/ammo_casing/caseless/arrow
 	name = "arrow"
@@ -193,7 +223,23 @@
 	righthand_file = 'icons/mob/inhands/items_righthand.dmi'
 	force = 12
 	projectile_type = /obj/item/projectile/bullet/reusable/arrow/bone
-	caliber = "bone_arrow"
+	caliber = "arrow"
+
+/obj/item/ammo_casing/caseless/arrow/jagged
+	name = "jagged-tipped arrow"
+	desc = "Стрела, сделанная из зубов хищной рыбы. Невероятно острая и крепкая."
+	ru_names = list(
+		NOMINATIVE = "зазубренная стрела",
+		GENITIVE = "зазубренной стрелы",
+		DATIVE = "зазубренной стреле",
+		ACCUSATIVE = "зазубренную стрелу",
+		INSTRUMENTAL = "зазубренной стрелой",
+		PREPOSITIONAL = "зазубренной стреле",
+	)
+	icon_state = "jagged_arrow"
+	force = 16
+	projectile_type = /obj/item/projectile/bullet/reusable/arrow/jagged
+	caliber = "arrow"
 
 //quiver
 /obj/item/storage/backpack/quiver

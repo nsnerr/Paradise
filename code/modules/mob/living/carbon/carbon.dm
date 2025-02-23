@@ -699,10 +699,13 @@
 	if(!istype(toEat))
 		return FALSE
 	var/fullness = nutrition + 10
+	var/time_to_eat = toEat.eat_time
 	if(istype(toEat, /obj/item/reagent_containers/food/snacks))
 		for(var/datum/reagent/consumable/C in reagents.reagent_list) //we add the nutrition value of what we're currently digesting
 			fullness += C.nutriment_factor * C.volume / (C.metabolization_rate * metabolism_efficiency * digestion_ratio)
 	if(user == src)
+		if(time_to_eat > 0 && !do_after(user, time_to_eat, max_interact_count = 1))
+			return FALSE
 		if(istype(toEat, /obj/item/reagent_containers/food/drinks))
 			if(!selfDrink(toEat))
 				return FALSE
@@ -771,6 +774,8 @@ so that different stomachs can handle things in different ways VB*/
 		satiety -= toEat.junkiness
 	if(toEat.consume_sound)
 		playsound(loc, toEat.consume_sound, rand(10,50), 1)
+	if(toEat.has_special_eating_effects)
+		toEat.on_mob_eating_effect(src)
 	if(toEat.reagents.total_volume)
 		var/fraction = min(this_bite/toEat.reagents.total_volume, 1)
 		if(fraction)

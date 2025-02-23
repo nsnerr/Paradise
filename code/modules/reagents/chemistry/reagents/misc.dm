@@ -716,6 +716,20 @@
 		M.add_language(LANGUAGE_MONKEY_HUMAN)
 	return ..()
 
+/datum/reagent/bugmilk
+	name = "Пепельное молоко"
+	id = "bugmilk"
+	description = "Молочная субстанция, вырабатываемая некоторыми видами на Лазис Ардакс. Весьма вкусное."
+	reagent_state = LIQUID
+	color = "#e4dac5"
+	taste_description = "густого молока"
+	metabolization_rate = 2 * REAGENTS_METABOLISM
+
+/datum/reagent/bugmilk/on_mob_life(mob/living/M)
+	M.reagents.add_reagent("cream", 0.4)
+	M.reagents.add_reagent("salglu_solution", 0,4)
+	return ..()
+
 /datum/reagent/admin_cleaner
 	name = "WD-2381"
 	color = "#da9eda"
