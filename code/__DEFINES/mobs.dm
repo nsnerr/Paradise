@@ -127,6 +127,12 @@
 #define SLIME_FRIENDSHIP_STAY				3 //Min friendship to order it to stay
 #define SLIME_FRIENDSHIP_ATTACK				8 //Min friendship to order it to attack
 
+//Spiders ai states
+#define SPINNING_WEB 1
+#define LAYING_EGGS 2
+#define MOVING_TO_TARGET 3
+#define SPINNING_COCOON 4
+
 //Hostile simple animals
 //If you add a new status, be sure to add a list for it to the simple_animals global in _globalvars/lists/mobs.dm
 #define AI_ON 1
