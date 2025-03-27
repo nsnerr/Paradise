@@ -3334,6 +3334,7 @@
 #include "code\modules\surgery\organs\subtypes\vulpkanin.dm"
 #include "code\modules\surgery\organs\subtypes\wryn.dm"
 #include "code\modules\surgery\organs\subtypes\xenos.dm"
+#include "code\modules\surgery\organs\subtypes\shadowling.dm"
 #include "code\modules\telesci\bscrystal.dm"
 #include "code\modules\telesci\gps.dm"
 #include "code\modules\telesci\rcs.dm"
