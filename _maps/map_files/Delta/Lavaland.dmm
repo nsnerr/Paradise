@@ -501,13 +501,15 @@
 	},
 /area/mine/living_quarters)
 "bI" = (
-/obj/machinery/disposal,
-/obj/effect/decal/warning_stripes/yellow,
-/obj/structure/disposalpipe/trunk{
+/obj/machinery/bodyscanner{
 	dir = 8
 	},
+/obj/structure/fishingrodcabinet{
+	pixel_x = 32
+	},
 /turf/simulated/floor/plasteel{
-	icon_state = "dark"
+	dir = 4;
+	icon_state = "darkyellow"
 	},
 /area/mine/living_quarters)
 "bK" = (
@@ -598,31 +600,27 @@
 	},
 /area/mine/living_quarters)
 "bX" = (
-/obj/machinery/iv_drip,
-/obj/machinery/atmospherics/unary/vent_pump/on{
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
-	},
-/turf/simulated/floor/plasteel{
-	dir = 8;
-	icon_state = "whiteblue";
-	tag = "icon-whiteblue (WEST)"
-	},
-/area/mine/living_quarters)
-"bY" = (
-/obj/structure/table,
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/item/storage/toolbox,
-/obj/machinery/vending/wallmed{
-	pixel_x = 26
-	},
-/obj/item/reagent_containers/spray/cleaner,
-/obj/machinery/atmospherics/unary/vent_scrubber/on{
-	dir = 8
 	},
 /turf/simulated/floor/plasteel{
 	icon_state = "dark"
+	},
+/area/mine/living_quarters)
+"bY" = (
+/obj/machinery/vending/wallmed{
+	pixel_x = 26
+	},
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 8
+	},
+/obj/machinery/sleeper,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/plasteel{
+	dir = 4;
+	icon_state = "darkblue"
 	},
 /area/mine/living_quarters)
 "bZ" = (
@@ -849,11 +847,8 @@
 /area/mine/laborcamp/security)
 "cI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/structure/bed/roller,
 /turf/simulated/floor/plasteel{
-	dir = 1;
-	icon_state = "whiteblue";
-	tag = "icon-whiteblue (NORTH)"
+	icon_state = "dark"
 	},
 /area/mine/living_quarters)
 "cK" = (
@@ -885,26 +880,23 @@
 /turf/simulated/floor/plating,
 /area/mine/production)
 "cQ" = (
-/obj/machinery/bodyscanner{
-	dir = 4
+/obj/structure/chair/office/light{
+	dir = 8;
+	pixel_y = 3
 	},
 /turf/simulated/floor/plasteel{
-	dir = 10;
-	icon_state = "whiteblue";
-	tag = "icon-whiteblue (SOUTHWEST)"
+	icon_state = "darkblue"
 	},
 /area/mine/living_quarters)
 "cS" = (
-/obj/structure/closet/crate/freezer,
-/obj/item/reagent_containers/iv_bag/bloodsynthetic/nitrogenis,
-/obj/item/reagent_containers/iv_bag/bloodsynthetic/nitrogenis,
-/obj/item/reagent_containers/iv_bag/bloodsynthetic/oxygenis,
-/obj/item/reagent_containers/iv_bag/bloodsynthetic/oxygenis,
-/obj/structure/fishingrodcabinet{
-	pixel_x = 32
+/obj/machinery/disposal,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
 	},
+/obj/effect/decal/warning_stripes/yellow,
 /turf/simulated/floor/plasteel{
-	icon_state = "dark"
+	dir = 6;
+	icon_state = "darkyellow"
 	},
 /area/mine/living_quarters)
 "cT" = (
@@ -942,27 +934,19 @@
 /turf/simulated/floor/lava/lava_land_surface,
 /area/lavaland/surface/outdoors/necropolis)
 "cY" = (
-/obj/machinery/alarm{
-	pixel_y = 24
-	},
-/obj/structure/closet/crate/medical,
-/obj/item/storage/firstaid,
-/obj/item/storage/firstaid/o2,
 /turf/simulated/floor/plasteel{
-	dir = 9;
-	icon_state = "whiteblue";
-	tag = "icon-whiteblue (NORTHWEST)"
+	icon_state = "dark"
 	},
 /area/mine/living_quarters)
 "cZ" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/medical/glass{
-	name = "Infirmary"
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/medical/glass{
+	name = "Mining Station MedBay"
+	},
 /turf/simulated/floor/plasteel{
-	icon_state = "white"
+	icon_state = "dark"
 	},
 /area/mine/living_quarters)
 "db" = (
@@ -1038,14 +1022,11 @@
 /turf/simulated/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "dl" = (
-/obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
 /turf/simulated/floor/plasteel{
-	dir = 4;
-	icon_state = "whiteblue";
-	tag = "icon-whiteblue (EAST)"
+	icon_state = "dark"
 	},
 /area/mine/living_quarters)
 "dp" = (
@@ -1079,11 +1060,16 @@
 /turf/simulated/floor/plasteel,
 /area/mine/production)
 "dv" = (
-/obj/structure/disposalpipe/segment,
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/iv_bag/bloodsynthetic/nitrogenis,
+/obj/item/reagent_containers/iv_bag/bloodsynthetic/nitrogenis,
+/obj/item/reagent_containers/iv_bag/bloodsynthetic/oxygenis,
+/obj/item/reagent_containers/iv_bag/bloodsynthetic/oxygenis,
 /turf/simulated/floor/plasteel{
-	dir = 6;
-	icon_state = "whiteblue";
-	tag = "icon-whiteblue (SOUTHEAST)"
+	icon_state = "darkblue"
 	},
 /area/mine/living_quarters)
 "dx" = (
@@ -1304,7 +1290,7 @@
 	dir = 10
 	},
 /turf/simulated/floor/plasteel{
-	icon_state = "white"
+	icon_state = "dark"
 	},
 /area/mine/living_quarters)
 "ep" = (
@@ -2267,6 +2253,16 @@
 	},
 /turf/simulated/floor/indestructible/boss,
 /area/mine/necropolis)
+"iL" = (
+/obj/machinery/alarm{
+	pixel_y = 22
+	},
+/obj/machinery/suit_storage_unit/mining_medic,
+/turf/simulated/floor/plasteel{
+	dir = 9;
+	icon_state = "darkblue"
+	},
+/area/mine/living_quarters)
 "iM" = (
 /obj/item/stack/ore/glass/basalt,
 /obj/effect/mapping_helpers/no_lava,
@@ -2881,6 +2877,16 @@
 	},
 /turf/simulated/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"lK" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 4
+	},
+/obj/machinery/computer/crew,
+/turf/simulated/floor/plasteel{
+	dir = 8;
+	icon_state = "darkblue"
+	},
+/area/mine/living_quarters)
 "lP" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
@@ -3390,6 +3396,15 @@
 	icon_state = "barber"
 	},
 /area/mine/laborcamp)
+"nU" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/plasteel{
+	dir = 8;
+	icon_state = "darkyellow"
+	},
+/area/mine/living_quarters)
 "nX" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -3502,6 +3517,15 @@
 	},
 /turf/simulated/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"pk" = (
+/obj/machinery/computer/med_data{
+	dir = 4
+	},
+/turf/simulated/floor/plasteel{
+	dir = 10;
+	icon_state = "darkyellow"
+	},
+/area/mine/living_quarters)
 "pp" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -3726,23 +3750,6 @@
 	icon_state = "brown"
 	},
 /area/mine/eva)
-"qZ" = (
-/obj/machinery/defibrillator_mount/loaded{
-	pixel_y = 24
-	},
-/obj/machinery/camera{
-	c_tag = "Mining Medpoint";
-	network = list("Mining Outpost")
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 6
-	},
-/turf/simulated/floor/plasteel{
-	dir = 5;
-	icon_state = "whiteblue";
-	tag = "icon-whiteblue (NORTHEAST)"
-	},
-/area/mine/living_quarters)
 "rb" = (
 /obj/structure/stone_tile/block,
 /obj/structure/stone_tile{
@@ -4279,6 +4286,16 @@
 	icon_state = "darkred"
 	},
 /area/mine/laborcamp)
+"vB" = (
+/obj/structure/sign/poster/official/random{
+	pixel_y = 32
+	},
+/obj/structure/closet/secure_closet/mining_medic,
+/turf/simulated/floor/plasteel{
+	dir = 1;
+	icon_state = "darkyellow"
+	},
+/area/mine/living_quarters)
 "vC" = (
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/simple/visible{
@@ -4870,17 +4887,6 @@
 /mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient,
 /turf/simulated/floor/indestructible/boss,
 /area/mine/necropolis)
-"Ak" = (
-/obj/structure/chair{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/simulated/floor/plasteel{
-	icon_state = "bar"
-	},
-/area/mine/living_quarters)
 "Au" = (
 /obj/item/stack/ore/iron,
 /obj/effect/mapping_helpers/no_lava,
@@ -5408,6 +5414,21 @@
 	},
 /turf/simulated/floor/lava/lava_land_surface,
 /area/mine/necropolis)
+"Fd" = (
+/obj/structure/table/glass,
+/obj/item/storage/toolbox/surgery{
+	pixel_x = -1;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/spray/cleaner/medical{
+	desc = "Someone has crossed out the Space from Space Cleaner and written in Surgery. 'Do not remove under punishment of death!!!' is scrawled on the back.";
+	name = "Surgery Cleaner"
+	},
+/turf/simulated/floor/plasteel{
+	dir = 5;
+	icon_state = "darkblue"
+	},
+/area/mine/living_quarters)
 "Fe" = (
 /turf/simulated/wall,
 /area/mine/living_quarters)
@@ -5530,7 +5551,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/plasteel{
-	icon_state = "white"
+	icon_state = "dark"
 	},
 /area/mine/living_quarters)
 "FY" = (
@@ -6198,6 +6219,16 @@
 	dir = 4
 	},
 /turf/simulated/floor/plasteel,
+/area/mine/living_quarters)
+"KX" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/computer/operating{
+	dir = 4
+	},
+/turf/simulated/floor/plasteel{
+	dir = 1;
+	icon_state = "darkblue"
+	},
 /area/mine/living_quarters)
 "La" = (
 /turf/simulated/wall/r_wall,
@@ -7384,6 +7415,26 @@
 /turf/simulated/floor/plasteel{
 	dir = 4;
 	icon_state = "browncorner"
+	},
+/area/mine/living_quarters)
+"Va" = (
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = 24
+	},
+/obj/machinery/camera{
+	c_tag = "Mining Medpoint";
+	network = list("Mining Outpost")
+	},
+/obj/machinery/optable,
+/obj/machinery/shower{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/item/tank/internals/anesthetic,
+/obj/item/clothing/mask/breath/medical,
+/turf/simulated/floor/plasteel{
+	dir = 1;
+	icon_state = "darkyellow"
 	},
 /area/mine/living_quarters)
 "Vb" = (
@@ -22622,12 +22673,12 @@ aj
 aj
 fw
 fw
-WO
+Zf
+bs
+bq
+bH
 bV
-Ak
-bV
-YL
-YL
+cL
 WO
 ee
 GZ
@@ -22880,11 +22931,11 @@ aj
 aj
 fw
 Zf
-bs
-bq
-bH
-bV
-cL
+Zf
+Fe
+Fe
+cn
+Fe
 Fe
 ef
 GZ
@@ -23135,13 +23186,13 @@ aj
 aj
 aj
 aj
-aj
+ab
+ab
 Zf
-WO
-Zf
-Fe
-cn
-Fe
+iL
+nU
+lK
+pk
 Fe
 xA
 Bi
@@ -23393,9 +23444,9 @@ aj
 aj
 aj
 aj
-aj
 Uh
 Zf
+vB
 cY
 bX
 cQ
@@ -23649,10 +23700,10 @@ aj
 aj
 aj
 aj
-aj
 cw
 dy
 zB
+KX
 cI
 eo
 FT
@@ -23907,10 +23958,10 @@ aj
 aj
 aj
 aj
-aj
 Uh
 Zf
-qZ
+Va
+cY
 dl
 dv
 dK
@@ -24164,9 +24215,9 @@ aj
 aj
 aj
 fw
-fw
 ai
 Zf
+Fd
 bI
 bY
 cS
@@ -24420,10 +24471,10 @@ aj
 aj
 aj
 fw
-fw
 ai
 ai
 Zf
+Fe
 Fe
 Fe
 Fe

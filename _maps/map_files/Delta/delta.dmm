@@ -56440,10 +56440,8 @@
 /turf/simulated/floor/plasteel,
 /area/teleporter)
 "hRx" = (
-/obj/structure/chair/office/dark{
-	dir = 4
-	},
-/obj/effect/landmark/start/shaft_miner,
+/obj/structure/chair/office/dark,
+/obj/effect/landmark/start/mining_medic,
 /turf/simulated/floor/plasteel{
 	dir = 5;
 	icon_state = "brown"
@@ -91860,6 +91858,7 @@
 "qjh" = (
 /obj/effect/decal/warning_stripes/yellow/partial,
 /obj/effect/decal/warning_stripes/arrow,
+/obj/effect/landmark/start/shaft_miner,
 /turf/simulated/floor/plasteel{
 	icon_state = "purple"
 	},
@@ -111363,6 +111362,14 @@
 	icon_state = "darkbluecorners"
 	},
 /area/tcommsat/chamber)
+"uGp" = (
+/obj/structure/chair/office/dark,
+/obj/effect/landmark/start/mining_medic,
+/turf/simulated/floor/plasteel{
+	dir = 1;
+	icon_state = "purple"
+	},
+/area/quartermaster/miningdock)
 "uGt" = (
 /obj/structure/bookcase,
 /turf/simulated/floor/wood{
@@ -171421,7 +171428,7 @@ duw
 hzg
 dDb
 aZp
-kMn
+uGp
 mfh
 mfh
 djR

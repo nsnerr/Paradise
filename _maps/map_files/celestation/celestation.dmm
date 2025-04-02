@@ -70143,6 +70143,13 @@
 	icon_state = "caution"
 	},
 /area/atmos/distribution)
+"meu" = (
+/obj/structure/chair/office/dark,
+/obj/effect/landmark/start/mining_medic,
+/turf/simulated/floor/plasteel{
+	icon_state = "brownfull"
+	},
+/area/quartermaster/miningdock)
 "meA" = (
 /turf/simulated/floor/plating{
 	icon_state = "asteroidplating"
@@ -85852,6 +85859,11 @@
 	},
 /turf/simulated/floor/carpet/black,
 /area/crew_quarters/captain)
+"pgi" = (
+/obj/structure/chair/office/dark,
+/obj/effect/landmark/start/mining_medic,
+/turf/simulated/floor/plasteel,
+/area/quartermaster/miningdock)
 "pgx" = (
 /obj/effect/turf_decal/delivery/red,
 /obj/vehicle/ridden/secway,
@@ -256123,7 +256135,7 @@ oqZ
 aeM
 tqz
 fhT
-uVl
+meu
 pLB
 uVl
 ipH
@@ -256380,7 +256392,7 @@ oqZ
 oqZ
 tYZ
 lwQ
-hMU
+pgi
 qiz
 hMU
 ePS

@@ -53851,6 +53851,10 @@
 	icon_state = "white"
 	},
 /area/medical/virology/lab)
+"ust" = (
+/obj/effect/landmark/start/mining_medic,
+/turf/simulated/floor/plating/asteroid,
+/area/ruin/unpowered)
 "usV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
@@ -71221,7 +71225,7 @@ vPw
 vPw
 aXY
 tNe
-tNe
+ust
 siG
 aKh
 tNe

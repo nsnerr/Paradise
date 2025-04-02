@@ -5894,6 +5894,10 @@
 /obj/structure/flora/ausbushes/fernybush,
 /turf/simulated/floor/grass,
 /area/hallway/secondary/exit)
+"dYU" = (
+/obj/effect/landmark/start/mining_medic,
+/turf/simulated/floor/plasteel,
+/area/quartermaster/storage)
 "dYZ" = (
 /obj/machinery/camera/autoname,
 /obj/structure/closet/librarian,
@@ -336572,7 +336576,7 @@ jez
 vjB
 llI
 jxt
-llI
+dYU
 isi
 isi
 jxt
