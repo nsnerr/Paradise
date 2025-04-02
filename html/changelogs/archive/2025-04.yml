@@ -1,0 +1,13 @@
+'2025-04-01':
+  BeebBeebBoob:
+  - bugfix: 'Revert bugfixes 516 TGUI chat say (#6710 and #6715) (#6746)'
+  NightDawnFox:
+  - bugfix: glockroach runtime on simple_find_target (#6741)
+  - bugfix: another basic runtime (I hope) (#6743)
+  TimChi:
+  - add: True-Observing port (#6665)
+  dageavtobusnick:
+  - bugfix: фикс автоаутфита респав машины (#6750)
+'2025-04-02':
+  Testmerge Worker:
+  - add: mining medic (ready) (#6638) [testmerge][4522733]

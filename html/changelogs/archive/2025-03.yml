@@ -1,0 +1,192 @@
+'2025-03-01':
+  BeebBeebBoob:
+  - bugfix: Большие фиксы АльтКлика. Делаем лучше (#6617)
+  Den109G:
+  - tweak: Announcements now published in the announcement section (#6610)
+  FlitchTime:
+  - imageadd: Спрайты в руках для рига рд, щита и пда кэпа (#6596)
+  NightDawnFox:
+  - spellcheck: эмеральд -> изумруд (#6615)
+  - bugfix: строительство каменной печи и других вещей из камня теперь занимает время
+      (#6618)
+  - add: Мартышки поумнели (#6609)
+  NuSanya:
+  - tweak: haloperidol, scs-3 cage, holywater (#6565)
+  PlayerUnknown14:
+  - bugfix: фикс локализации органов, снова (#6608)
+  SAAD:
+  - unknown: hermit fix(?) (#6578)
+  Vitalya:
+  - unknown: респрайты и локализация некоторых симплмобов (#6594)
+  dageavtobusnick:
+  - bugfix: Исправление рантайма при выводе гринтекста ксеноморфов (#6607)
+  - bugfix: Исправления ксеноморфов (#6613)
+  - bugfix: Исправление инпутов в ВВ + исправление округления в числовых инпутах (#6619)
+  - qol: Преф, позволяющий серверно отключить комбат логи стрельбы (#6564)
+  - admin: fat smite + fake bwoink smite (#6592)
+'2025-03-03':
+  FlitchTime:
+  - bugfix: Фикс спрайта в руках для реплики катаны (#6620)
+  Kray1k:
+  - bugfix: missing advanced reagent scanner design (#6623)
+  NightDawnFox:
+  - qol: fishing pouch for ashwalkers (#6614)
+  PlayerUnknown14:
+  - bugfix: починил спичвербы шёпота (#6624)
+  anon1mka:
+  - spellcheck: локализация языков (#6590)
+  littleboobs:
+  - spellcheck: перевод аплинка и его предметов (#6489)
+'2025-03-05':
+  BeebBeebBoob:
+  - del: Реверт перевод генератор языков при say (#6631)
+  NightDawnFox:
+  - refactor: fastport tg beam datums (#6597)
+  - bugfix: venus human trap vines should be deleting properly (#6633)
+  anon1mka:
+  - bugfix: починка языка тенелингов (#6626)
+  chomasuke:
+  - bugfix: Делеи у операций ВСЁ (#6627)
+  dageavtobusnick:
+  - bugfix: теперь после деактивации боеголовки шаттл улетает (#6630)
+'2025-03-08':
+  FlitchTime:
+  - tweak: Убираем путеводитель по дельте с карманов (#6643)
+  - bugfix: Меняем местами бластдуры и кнопки для карго шаттла (#6641)
+  NightDawnFox:
+  - unknown: nutcracker now respects shields and martial arts (#6646)
+  PlayerUnknown14:
+  - bugfix: спичвербы + робо-гипоспрей (#6635)
+  anon1mka:
+  - spellcheck: локализация новостей и новостника (#6611)
+  dageavtobusnick:
+  - bugfix: Исправление возможного харддела при удалении картриджа реквест консоли
+      (#6647)
+  littleboobs:
+  - unknown: аплинк и предметы (#6628)
+'2025-03-09':
+  FlitchTime:
+  - bugfix: Заказ атмосрига (#6651)
+  NightDawnFox:
+  - refactor: obj/item/projectile - obj/projectile (#6636)
+  anon1mka:
+  - bugfix: rolled newspaper (#6650)
+'2025-03-10':
+  anon1mka:
+  - qol: TGUI Healthanalyzer (#6637)
+'2025-03-11':
+  NuSanya:
+  - bugfix: дым, что не должен заставлять блевать, теперь не заставляет (#6654)
+  Pelmenik123:
+  - unknown: Оптимизация оповещения ПДА (#6577)
+  Vitalya:
+  - unknown: Респрайты фермерских животных + локализация + мелкие фичи (#6616)
+'2025-03-12':
+  NightDawnFox:
+  - bugfix: радикальное решение проблемы с рантаймами на лаве целестанции. (#6657)
+'2025-03-13':
+  BeebBeebBoob:
+  - bugfix: SS AI behavior now Inits correctly (#6660)
+  - bugfix: Watcher's look alt-click (#6661)
+  - bugfix: AI's airlocks Alt-click works (#6662)
+  - bugfix: Runtimes & Possible log viewer fix (#6663)
+  kukur:
+  - spellcheck: Исправляем "лопасти" на "электроды" (#6659)
+'2025-03-16':
+  Den109G:
+  - bugfix: Now admins can use VV (#6668)
+'2025-03-17':
+  dageavtobusnick:
+  - add: Лицехват - моб (#6612)
+'2025-03-19':
+  Antoonij:
+  - add: auto dnr after death preference (#6629)
+  - bugfix: move autodnr to preftoggles3 (#6676)
+  FlitchTime:
+  - spellcheck: Свои названия органам абдукторов и мясистой массе (#6674)
+  - bugfix: Органы больше не токсичят (#6673)
+  - tweak: Тгуй вендоматов и диспенсеров (#6645)
+  - tweak: Делаем мёртвых слаймов лужами (#6644)
+  - tweak: Кнопки статпанели (#6642)
+  - bugfix: Удалил стул из стены (#6678)
+  NightDawnFox:
+  - add: следующая итерация датумного ИИ у обезьян + собаки! (#6622)
+  NuSanya:
+  - bugfix: kudzu mutations not working as intended (#6671)
+  TimChi:
+  - bugfix: возврат иконок микшера громкости (#6672)
+  - bugfix: Хамелеон-Риг не работал, теперь работает. (#6677)
+  dageavtobusnick:
+  - tweak: Порт нескольких пр-ов совместимости с 516 (#6655)
+  - bugfix: Исправление ошибок уклонений мобов (#6669)
+  - tweak: Теперь все мобы-антаги, которые могут залезть в венты, спавнятся сразу
+      внутри (#6666)
+  - admin: Возвращение триалам их Secrets (#6653)
+'2025-03-20':
+  Antoonij:
+  - bugfix: пропущенная запятая в sql запросе (#6679)
+  - bugfix: fix sql query (#6680)
+'2025-03-21':
+  dageavtobusnick:
+  - bugfix: Фиксы интерфейсов на 516 и не только (#6682)
+'2025-03-24':
+  FlitchTime:
+  - imageadd: Спрайты для перчаток (#6675)
+  SansWD:
+  - unknown: Поменял с обычного ключа на ключ для ATV у руины зимнего биокупала (#6685)
+  TimChi:
+  - bugfix: Экзокостюмы больше не могут хватать мехи гравипультой (#6694)
+  anon1mka:
+  - unknown: Перевод карт (обычные, UNUM, таро) на русский, а интерфейсов - на TGUI
+      (#6639)
+  - bugfix: отображение веществ гостам (#6686)
+  dageavtobusnick:
+  - bugfix: Несколько фиксов html (#6691)
+  - bugfix: Исправление проблемы с областью видимости при смене версии бьенда между
+      515 и 516 (#6698)
+'2025-03-27':
+  Den109G:
+  - bugfix: Now paper don't shows itself to everyone (#6706)
+  FlitchTime:
+  - unknown: Тенелинги (#6683)
+  NightDawnFox:
+  - add: first basic mobs port (#6681)
+  - bugfix: aliens can't become cultists anymore (#6703)
+  TimChi:
+  - tweak: DNR теперь имеет отдельную иконку для худа (#6696)
+  Vitalya:
+  - tweak: 3 очка всем имплантам в лодауте (#6692)
+  - add: Плюшевая акула в лодаут (#6693)
+  dageavtobusnick:
+  - bugfix: Маштабирование. Опять.(515 и 516) (#6699)
+  - bugfix: Исправление ошибки 404 при отправке больших текстов через tgui на 516
+      (#6702)
+  - bugfix: В окне состояния меха теперь обновляются параметры (#6704)
+  - bugfix: Исправление отсутствия кнопок в пачке бумаг с фото (#6705)
+  tsoivecen199015:
+  - bugfix: Abotch map fixes (#6700)
+'2025-03-28':
+  FlitchTime:
+  - bugfix: Возвращаем спрайты и фиксим пути перчаток (#6718)
+  NightDawnFox:
+  - bugfix: glockroaches now shoots normal caseless bullets (#6713)
+  dageavtobusnick:
+  - bugfix: Еще немного фиксов для 516 (#6710)
+  - bugfix: Возможное решение проблемы с tgui say на 516 (#6715)
+  spaghetti:
+  - del: Удаление адамантитового зелья (#6709)
+'2025-03-29':
+  dageavtobusnick:
+  - bugfix: Исправляет неработающую очистку региона в билдмоде (#6722)
+  - bugfix: Металическая пена больше не дублируется в 1 тайле (#6723)
+  - unknown: Закрытие абуза с моментально убивающими дымовыми гранатами/овощами (#6724)
+  - bugfix: Мертвые мобы теперь не дышат дымом (#6725)
+'2025-03-31':
+  FlitchTime:
+  - bugfix: Тени не боятся осколков стекла (#6719)
+  NuSanya:
+  - bugfix: reagent misspell (#6736)
+  Vitalya:
+  - bugfix: У томата больше нет глаз в движении (#6731)
+  dageavtobusnick:
+  - bugfix: Скролл в меню эволюции генокрада теперь работает на 516 (#6734)
